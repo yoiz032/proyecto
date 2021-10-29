@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+<body class="body-registro">
+  {%block body%}
+  <div class="container">
+    <div class="row justify-content-center pt-5 mt-5 ms-1">
+      <div class="col-md-4 col-lg-5 formulario-registro">
+        {%for vuelo in vuelos %}
+        <form
+          action="/update_vuelo/{{vuelo[0]}}"
+          method="POST"
+          name="formAgregarVuelo"
+          onsubmit="validar_formulario_agregar_vuelo();"
+        >
+          <div class="form-group text-center mb-5">
+            <h2>Modificar Vuelo</h2>
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="origen">Origen</label>
+            <input
+              type="text"
+              name="origen"
+              id="origen"
+              class="form-control mt-2 mb-4"
+              placeholder="Ciudad de Origen"
+              value="{{vuelo.1}}"
+            />
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="destino">Destino</label>
+            <input
+              type="text"
+              name="destino"
+              id="destino"
+              class="form-control mt-2 mb-4"
+              placeholder="Ciudad de Destino"
+              value="{{vuelo.2}}"
+            />
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="estado">Estado de Vuelo</label>
+            <input
+              type="text"
+              name="estado"
+              id="estado"
+              class="form-control mt-2 mb-4"
+              placeholder="Estado de Vuelo"
+              value="{{vuelo.3}}"
+            />
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="numero_vuelo">Numero de Vuelo</label>
+            <input
+              type="text"
+              name="numero_vuelo"
+              id="numero_vuelo"
+              class="form-control mt-2 mb-4"
+              placeholder="Numero de Vuelo"
+              value="{{vuelo.4}}"
+            />
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="gate">Puerta</label>
+            <input
+              type="text"
+              name="gate"
+              id="gate"
+              class="form-control mt-2 mb-4"
+              placeholder="Puerta"
+              value="{{vuelo.5}}"
+            />
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="hora_salida">Hora Salida</label>
+            <input
+              type="time"
+              name="hora_salida"
+              id="hora_salida"
+              class="form-control mt-2 mb-4"
+              placeholder="Hora Salida"
+              value="{{vuelo.7}}"
+            />
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="hora_llegada">Hora Llegada</label>
+            <input
+              type="time"
+              name="hora_llegada"
+              id="hora_llegada"
+              class="form-control mt-2 mb-4"
+              placeholder="Hora Llegada"
+              value="{{vuelo.6}}"
+            />
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="fecha_ida">Fecha Salida</label>
+            <input
+              type="date"
+              name="fecha_ida"
+              id="fecha_ida"
+              class="form-control mt-2 mb-4"
+              placeholder="Fecha de Salida"
+              value="{{vuelo.8}}"
+            />
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="fecha_vuelta">Fecha vuelta</label>
+            <input
+              type="date"
+              name="fecha_vuelta"
+              id="fecha_vuelta"
+              class="form-control mt-2 mb-4"
+              placeholder="Fecha vuelta"
+              value="{{vuelo.9}}"
+            />
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="piloto">Piloto Asignado</label>
+            <input
+              type="text"
+              name="piloto"
+              id="piloto"
+              class="form-control mt-2 mb-4"
+              placeholder="Piloto Asignado"
+              value="{{vuelo.10}}"
+            />
+          </div>
+
+          <div class="form-group mx-sm-4">
+            <label for="avion">Avión Asignado</label>
+            <input
+              type="text"
+              name="avion"
+              id="avion"
+              class="form-control mt-2 mb-4"
+              placeholder="Avión Asignado"
+              value="{{vuelo.11}}"
+            />
+          </div>
+          <div class="form-group mx-sm-4">
+            <label for="capacidad">Capacidad de Vuelo</label>
+            <input
+              type="text"
+              name="capacidad"
+              id="capacidad"
+              class="form-control mt-2 mb-4"
+              placeholder="Capacidad de Vuelo"
+              value="{{vuelo.12}}"
+            />
+          </div>
+          <div class="form-row">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button type="submit" class="btn btn-primary mt-4 mb-4">
+                Modificar
+              </button>
+            </div>
+          </div>
+          <div class="form-group text-center mb-4" id="link-login">
+            <a href="/vuelos">Volver</a>
+          </div>
+          {%endfor %}
+        </form>
+      </div>
+    </div>
+  </div>
+  {%endblock%}
+</body>
